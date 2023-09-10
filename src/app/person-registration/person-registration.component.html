@@ -1,0 +1,69 @@
+<form (ngSubmit)="submitForm()" #registrationForm="ngForm">
+    <h2>Register New Person</h2>
+    <div class="col-12">
+        <div class="card">
+			<p-messages [(value)]="messageService" [enableService]="false" [closable]="true"></p-messages>
+            <h5>Person</h5>
+            <div class="p-fluid p-formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label htmlFor="firstname2">Nome</label>
+                    <input pInputText id="firstname2" type="text" [(ngModel)]="formData.Nome" name="Nome"/>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label htmlFor="lastname2">Apelido</label>
+                    <input pInputText id="lastname2" type="text" [(ngModel)]="formData.Apelido" name="Apelido"/>
+                </div>
+                <div class="field col-12">
+                    <label htmlFor="address">Email</label>
+                    <input pInputTextarea id="address" rows="4" [(ngModel)]="formData.Email" name="Email"/>
+                </div>
+				<div class="field col-12 md:col-3">
+                    <label htmlFor="state">Tipo de Pessoa</label>
+                    <p-dropdown
+                        [options]="dropdownItemsTypes"
+                        optionLabel="name"
+						[(ngModel)]="formData.PersonType"
+						required
+						name="PersonType"
+                    ></p-dropdown>
+                </div>	
+                <div class="field col-12 md:col-6">
+                    <label htmlFor="city">Documento {{formData.PersonType.code === 1 ? "CPF": "CNPJ"}}</label>
+                    <input pInputText id="city" type="text" [(ngModel)]="formData.Document" name="Document"/>
+                </div>
+				<div class="field col-12 md:col-3">
+                    <label htmlFor="zip">CEP</label>
+                    <input pInputText id="zip" type="text" [(ngModel)]="CEP" name="CEP"/>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label htmlFor="city">Password</label>
+                    <input pInputText id="city" type="text" [(ngModel)]="formData.Password" name="Password"/>
+                </div>
+                <div class="field col-12 md:col-3">
+                    <label htmlFor="state">Qualificação</label>
+                    <p-dropdown
+                        [options]="dropdownItemsQualifications"
+                        optionLabel="name"
+                        [(ngModel)]="formData.Qualification"
+						name="Qualification"
+                    ></p-dropdown>
+                </div>
+                <div class="field col-12 md:col-3">
+                    <label htmlFor="state">Role</label>
+                    <p-dropdown
+                        [options]="dropdownItemsRoles"
+                        optionLabel="name"
+                        [(ngModel)]="formData.Role"
+						name="Role"
+                    ></p-dropdown>
+                </div>
+            </div>
+			<div *ngIf="errorsMessage" class="text-red-500">{{ errorsMessage }}</div>    <button
+        type="submit"
+        class="button-style px-4 py-3 border-round text-blue-600 bg-blue-200 cursor-pointer w-fit font-bold border-transparent text-lg mt-3"
+    >
+        Register person
+    </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,51 @@
+<div class="person-list">
+    <div class="relative flex justify-center items-end w-100">
+        <h2>Person List</h2>
+        <button
+            class="flex align-items-center justify-content-center border-round text-blue-600 bg-blue-200 cursor-pointer w-fit font-bold border-transparent ml-4 mb-2"
+            (click)="redirectToRegisterPerson()"
+        >
+            Register Person
+        </button>
+        <p *ngIf="isLoading" class="absolute bottom-50% right-0">
+            <i class="pi pi-spin pi-spinner h-30 w-30"></i>
+        </p>
+    </div>
+    <div class="grid">
+        <div class="col-12 lg:col-6 xl:col-4" *ngFor="let person of persons">
+            <div class="card mb-0">
+                <div class="">
+                    <div>
+                        <div class="text-600 font-medium text-xl mb-1">
+                            {{ person.Name }}
+                        </div>
+                        <span class="block text-500 font-medium mb-3">{{
+                            person.Email
+                        }}</span>
+                    </div>
+                    <button
+                        class="flex align-items-center justify-content-center border-round text-red-600 bg-red-200 cursor-pointer w-fit font-bold border-transparent mb-2"
+                        [ngStyle]="{ width: '2.5rem', height: '2.5rem' }"
+                        (click)="fetchDisablePerson(person.Id)"
+                    >
+                        <i
+                            class="pi pi-fw pi-exclamation-circle text-red-600 text-xl mr-2"
+                        ></i>
+                        Desativar
+                    </button>
+                    <button
+                        class="flex align-items-center justify-content-center border-round text-yellow-600 bg-yellow-200 cursor-pointer w-fit font-bold border-transparent"
+                        [ngStyle]="{ width: '2.5rem', height: '2.5rem' }"
+                    >
+                        <i
+                            class="pi pi-fw pi-pencil text-yellow-600 text-xl mr-2"
+                        ></i>
+                        Editar
+                    </button>
+                </div>
+                <!-- <span class="text-green-500 font-medium">85 </span>
+          <span class="text-500">responded</span> -->
+            </div>
+        </div>
+    </div>
+</div>
