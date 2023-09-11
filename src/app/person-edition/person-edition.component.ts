@@ -60,18 +60,18 @@ export class PersonEditionComponent {
     async validateRequisition(): Promise<string> {
         debugger;
         let errorMessage = '';
-        // if (
-        //     (this.formData.PersonType?.code as ETypes) == ETypes.Fisica &&
-        //     !validateCPF(this.formData.Document)
-        // ) {
-        //     errorMessage += 'Document: CPF Incorreto; ';
-        // }
-        // if (
-        //     (this.formData.PersonType?.code as ETypes) == ETypes.Juridica &&
-        //     !validateCNPJ(this.formData.Document)
-        // ) {
-        //     errorMessage += 'Document: CNPJ Incorreto; ';
-        // }
+        if (
+            (this.formData.PersonType?.code as ETypes) == ETypes.Fisica &&
+            !validateCPF(this.formData.Document)
+        ) {
+            errorMessage += 'Document: CPF Incorreto; ';
+        }
+        if (
+            (this.formData.PersonType?.code as ETypes) == ETypes.Juridica &&
+            !validateCNPJ(this.formData.Document)
+        ) {
+            errorMessage += 'Document: CNPJ Incorreto; ';
+        }
         if (!this.formData.Nome) {
             errorMessage += 'Name: Vazio; ';
         }
