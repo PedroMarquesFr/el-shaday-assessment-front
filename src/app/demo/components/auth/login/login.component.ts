@@ -37,7 +37,6 @@ export class LoginComponent {
       .pipe(
         catchError((error: any) => {
           // Handle the error here
-          debugger;
           console.error('Error:', error);
           this.error = `Login failed. Please check your credentials and try again. ${error.error}`;
           return throwError(error);

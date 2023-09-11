@@ -58,7 +58,6 @@ export class PersonEditionComponent {
         });
     }
     async validateRequisition(): Promise<string> {
-        debugger;
         let errorMessage = '';
         if (
             (this.formData.PersonType?.code as ETypes) == ETypes.Fisica &&
@@ -109,7 +108,6 @@ export class PersonEditionComponent {
             })
             .subscribe(
                 (response) => {
-                    // debugger;
                     this.formData.Id = response?.id;
                     this.formData.Document = response?.document;
                     this.formData.Email = response?.email;
@@ -155,7 +153,6 @@ export class PersonEditionComponent {
             .set('Authorization', `Bearer ${accessToken}`)
             .set('Content-Type', 'application/json')
             .set('accept', 'application/json');
-        debugger;
         const formatedForm = {
             ...this.formData,
             personType: this.formData.PersonType?.code,

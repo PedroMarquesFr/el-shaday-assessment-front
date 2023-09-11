@@ -31,7 +31,6 @@ export class PersonListComponent implements OnInit {
 
     redirectToEdit(id: string): void {
         // Navigate to the 'example' route with the 'id' parameter
-        debugger;
         this.router.navigate(['/dashboard-person/edit', id]);
     }
     fetchDisablePerson(personId: string) {
