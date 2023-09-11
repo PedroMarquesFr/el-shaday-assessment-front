@@ -22,6 +22,7 @@ export class LoginComponent {
     email: string = '';
     password: string = '';
     error: string = '';
+    messageService;
   
     constructor(public layoutService: LayoutService, private http: HttpClient, private cookieService: CookieService, private router: Router) {}
   
@@ -32,12 +33,13 @@ export class LoginComponent {
         Password: this.password
       };
   
-      this.http.post('https://localhost:7199/api/v1/UserManagment/Login', loginData)
+      this.http.post('https://localhost:7135/api/v1/Person/Login', loginData)
       .pipe(
         catchError((error: any) => {
           // Handle the error here
+          debugger;
           console.error('Error:', error);
-          this.error = 'Login failed. Please check your credentials and try again.';
+          this.error = `Login failed. Please check your credentials and try again. ${error.error}`;
           return throwError(error);
         })
       )

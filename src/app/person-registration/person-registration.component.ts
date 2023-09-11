@@ -110,7 +110,7 @@ export class PersonRegistrationComponent {
         // Send the POST request to the API
         this.http
             .post(
-                'https://localhost:7199/api/v1/UserManagment/Register',
+                'https://localhost:7135/api/v1/Person/Register',
                 formatedForm,
                 { headers }
             )

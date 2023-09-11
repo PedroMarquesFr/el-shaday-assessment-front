@@ -17,16 +17,16 @@
                 <div class="">
                     <div>
                         <div class="text-600 font-medium text-xl mb-1">
-                            {{ person.Name }}
+                            {{ person.name }}
                         </div>
                         <span class="block text-500 font-medium mb-3">{{
-                            person.Email
+                            person.email
                         }}</span>
                     </div>
                     <button
                         class="flex align-items-center justify-content-center border-round text-red-600 bg-red-200 cursor-pointer w-fit font-bold border-transparent mb-2"
                         [ngStyle]="{ width: '2.5rem', height: '2.5rem' }"
-                        (click)="fetchDisablePerson(person.Id)"
+                        (click)="fetchDisablePerson(person.id)"
                     >
                         <i
                             class="pi pi-fw pi-exclamation-circle text-red-600 text-xl mr-2"
@@ -36,6 +36,7 @@
                     <button
                         class="flex align-items-center justify-content-center border-round text-yellow-600 bg-yellow-200 cursor-pointer w-fit font-bold border-transparent"
                         [ngStyle]="{ width: '2.5rem', height: '2.5rem' }"
+                        (click)="redirectToEdit(person.id)"
                     >
                         <i
                             class="pi pi-fw pi-pencil text-yellow-600 text-xl mr-2"

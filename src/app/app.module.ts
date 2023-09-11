@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+    import { NgModule } from '@angular/core';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,8 @@ import { PhotoService } from './demo/service/photo.service';
 import { PersonListComponent } from './person-list/person-list.component';
 import { PersonRegistrationComponent } from './person-registration/person-registration.component';
 import { FormsModule } from '@angular/forms';
+import { PersonEditionComponent } from './person-edition/person-edition.component';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
     declarations: [
@@ -22,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     imports: [
         AppRoutingModule,
         AppLayoutModule,
-        FormsModule
+        FormsModule,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

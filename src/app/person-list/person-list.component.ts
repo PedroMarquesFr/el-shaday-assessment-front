@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./person-list.component.scss'],
 })
 export class PersonListComponent implements OnInit {
-    apiUrl = 'https://localhost:7199/api/v1/UserManagment';
+    apiUrl = 'https://localhost:7135/api/v1/Person';
     persons: any[] = []; // Array to store fetched data
     isLoading = false;
 
@@ -27,24 +27,18 @@ export class PersonListComponent implements OnInit {
 
     redirectToRegisterPerson() {
         this.router.navigate(['/dashboard-person/register']);
-      } 
+    }
 
-    // desativarClicked(personName: string) {
-    //   // Assuming you have a function to deactivate the person here
-    //   // You can replace this with your actual logic
-
-    //   // Display a success message
-    //   this.messageService.add({
-    //     severity: 'success',
-    //     summary: 'Desativar',
-    //     detail: `${personName} has been deactivated successfully.`,
-    //   });
-    // }
+    redirectToEdit(id: string): void {
+        // Navigate to the 'example' route with the 'id' parameter
+        debugger;
+        this.router.navigate(['/dashboard-person/edit', id]);
+    }
     fetchDisablePerson(personId: string) {
         this.isLoading = true;
         const accessToken = this.cookieService.get('token');
         this.http
-            .put(`${this.apiUrl}/Deactivate?personId=${personId}`, {
+            .put(`${this.apiUrl}/Deactivate?personId=${personId}`, null, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`,
                     accept: 'application/json',
@@ -60,7 +54,7 @@ export class PersonListComponent implements OnInit {
                     this.isLoading = false;
                     console.error('Error fetching data', error);
                 }
-             );
+            );
     }
 
     fetchPersonList() {

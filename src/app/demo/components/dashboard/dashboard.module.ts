@@ -29,6 +29,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { TabViewModule } from 'primeng/tabview';
+import { PersonEditionComponent } from 'src/app/person-edition/person-edition.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -57,8 +59,9 @@ import { TabViewModule } from 'primeng/tabview';
         MessageModule,
         MessagesModule,
         TabViewModule,
+        ReactiveFormsModule
     ],
-    declarations: [DashboardComponent, PersonListComponent, PersonRegistrationComponent]
+    declarations: [DashboardComponent, PersonListComponent, PersonRegistrationComponent, PersonEditionComponent]
 })
 export class DashboardModule { 
     constructor(public layoutService: LayoutService, public router: Router, public cookieService: CookieService) {}
@@ -68,7 +71,6 @@ export class DashboardModule {
       state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       // Check if the user is authenticated, e.g., by verifying the presence of a token
       const isAuthenticated = this.cookieService.get('token'); // Your authentication check
-      console.log("isAuthenticated", isAuthenticated)
       if (isAuthenticated) {
         return true;
       } else {
