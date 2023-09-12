@@ -22,6 +22,16 @@
                         <span class="block text-500 font-medium mb-3">{{
                             person.email
                         }}</span>
+                        <span class="block text-500 font-medium mb-3">Qualification: {{
+                            qualifications[person.qualificationId]
+                        }}</span>
+                        <span class="block text-500 font-medium mb-3">Type: {{
+                            types[person.typeId]
+                        }}</span>
+                        <span class="block text-500 font-medium mb-3">Role: {{
+                            roles[person.roleId]
+                        }}</span>
+                        
                     </div>
                     <button
                         class="flex align-items-center justify-content-center border-round text-red-600 bg-red-200 cursor-pointer w-fit font-bold border-transparent mb-2"

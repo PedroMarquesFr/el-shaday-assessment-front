@@ -13,6 +13,20 @@ export class PersonListComponent implements OnInit {
     apiUrl = 'https://localhost:7135/api/v1/Person';
     persons: any[] = []; // Array to store fetched data
     isLoading = false;
+    roles = {
+        1: 'User',
+        2: 'Admin',
+    };
+    types = {
+        1: 'Fisica',
+        2: 'Juridica',
+    };
+    qualifications = {
+        1: 'Cliente',
+        2: 'Fornecedor',
+        3: 'Colaborador',
+    };
+
 
     constructor(
         private http: HttpClient,
@@ -67,6 +81,7 @@ export class PersonListComponent implements OnInit {
             })
             .subscribe(
                 (data: any) => {
+                    console.log(data);
                     this.persons = data;
                     // this.persons ={...this.persons}
                 },
