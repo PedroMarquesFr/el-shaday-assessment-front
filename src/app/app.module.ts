@@ -11,11 +11,7 @@ import { EventService } from './demo/service/event.service';
 import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
-import { PersonListComponent } from './person-list/person-list.component';
-import { PersonRegistrationComponent } from './person-registration/person-registration.component';
 import { FormsModule } from '@angular/forms';
-import { PersonEditionComponent } from './person-edition/person-edition.component';
-import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
     declarations: [

@@ -24,7 +24,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'Actions',
                 items: [
                     { label: 'Register Person', icon: 'pi pi-fw pi-id-card', routerLink: ['dashboard-person/register'] },
-                    { label: 'Register Department', icon: 'pi pi-fw pi-check-square', routerLink: ['dashboard-person/register-department'] },
+                    // { label: 'Register Department', icon: 'pi pi-fw pi-check-square', routerLink: ['dashboard-person/register-department'] },
                 ]
             },
         ];

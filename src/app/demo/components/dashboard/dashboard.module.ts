@@ -31,7 +31,7 @@ import { MessagesModule } from 'primeng/messages';
 import { TabViewModule } from 'primeng/tabview';
 import { PersonEditionComponent } from 'src/app/person-edition/person-edition.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { DepartmentListComponent } from 'src/app/department-list/department-list.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -61,7 +61,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         TabViewModule,
         ReactiveFormsModule
     ],
-    declarations: [DashboardComponent, PersonListComponent, PersonRegistrationComponent, PersonEditionComponent]
+    declarations: [DashboardComponent, PersonListComponent, PersonRegistrationComponent, PersonEditionComponent, DepartmentListComponent]
 })
 export class DashboardModule { 
     constructor(public layoutService: LayoutService, public router: Router, public cookieService: CookieService) {}

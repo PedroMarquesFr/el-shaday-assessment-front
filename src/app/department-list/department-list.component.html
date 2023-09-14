@@ -1,0 +1,29 @@
+<div class="person-list">
+    <div class="relative flex justify-center items-end w-100">
+        <h2>Department List</h2>
+        <!-- <button
+            class="flex align-items-center justify-content-center border-round text-blue-600 bg-blue-200 cursor-pointer w-fit font-bold border-transparent ml-4 mb-2"
+            (click)="redirectToRegisterPerson()"
+        >
+            Register Person
+        </button> -->
+        <p *ngIf="isLoading" class="absolute bottom-50% right-0">
+            <i class="pi pi-spin pi-spinner h-30 w-30"></i>
+        </p>
+    </div>
+    <div class="grid">
+        <div class="col-12 lg:col-6 xl:col-4" *ngFor="let department of departments">
+            <div class="card mb-0">
+                <div class="">
+                    <div>
+                        <div class="text-600 font-medium text-xl mb-1">
+                            Department Name: {{ department.name }}
+                        </div>
+                    </div>
+                </div>
+                <!-- <span class="text-green-500 font-medium">85 </span>
+          <span class="text-500">responded</span> -->
+            </div>
+        </div>
+    </div>
+</div>
