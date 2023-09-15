@@ -40,8 +40,8 @@ export class DepartmentListComponent {
       this.fetchDepartmentList();
   }
 
-  redirectToRegisterPerson() {
-      this.router.navigate(['/dashboard-person/register']);
+  redirectToRegisterDepartment() {
+      this.router.navigate(['/dashboard-person/register-department']);
   }
 
   fetchDepartmentList() {
